@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Slim-mom-individual-project/static/css/main.363cb4d0.css",
-    "main.js": "/Slim-mom-individual-project/static/js/main.83bbdc06.js",
-    "static/css/992.76194bf0.chunk.css": "/Slim-mom-individual-project/static/css/992.76194bf0.chunk.css",
-    "static/js/992.bbb33f04.chunk.js": "/Slim-mom-individual-project/static/js/992.bbb33f04.chunk.js",
+    "main.css": "/Slim-mom-individual-project/static/css/main.19d003b4.css",
+    "main.js": "/Slim-mom-individual-project/static/js/main.ae36b453.js",
+    "static/css/992.37651a13.chunk.css": "/Slim-mom-individual-project/static/css/992.37651a13.chunk.css",
+    "static/js/992.a1a2d801.chunk.js": "/Slim-mom-individual-project/static/js/992.a1a2d801.chunk.js",
     "static/js/534.a179d229.chunk.js": "/Slim-mom-individual-project/static/js/534.a179d229.chunk.js",
     "static/css/591.de7ecd51.chunk.css": "/Slim-mom-individual-project/static/css/591.de7ecd51.chunk.css",
     "static/js/591.25fc68dc.chunk.js": "/Slim-mom-individual-project/static/js/591.25fc68dc.chunk.js",
     "static/js/586.7054de27.chunk.js": "/Slim-mom-individual-project/static/js/586.7054de27.chunk.js",
     "static/css/584.de7ecd51.chunk.css": "/Slim-mom-individual-project/static/css/584.de7ecd51.chunk.css",
-    "static/js/584.71302e94.chunk.js": "/Slim-mom-individual-project/static/js/584.71302e94.chunk.js",
+    "static/js/584.9b2f1739.chunk.js": "/Slim-mom-individual-project/static/js/584.9b2f1739.chunk.js",
     "static/js/123.32bd2dc2.chunk.js": "/Slim-mom-individual-project/static/js/123.32bd2dc2.chunk.js",
     "static/js/726.df9aa86e.chunk.js": "/Slim-mom-individual-project/static/js/726.df9aa86e.chunk.js",
     "static/js/962.bb79829f.chunk.js": "/Slim-mom-individual-project/static/js/962.bb79829f.chunk.js",
@@ -44,23 +44,23 @@
     "static/media/montserrat-vietnamese-700-normal.woff2": "/Slim-mom-individual-project/static/media/montserrat-vietnamese-700-normal.d274db79ab234f7cb0d3.woff2",
     "static/media/montserrat-vietnamese-400-normal.woff2": "/Slim-mom-individual-project/static/media/montserrat-vietnamese-400-normal.176348415471f3e062e6.woff2",
     "index.html": "/Slim-mom-individual-project/index.html",
-    "main.363cb4d0.css.map": "/Slim-mom-individual-project/static/css/main.363cb4d0.css.map",
-    "main.83bbdc06.js.map": "/Slim-mom-individual-project/static/js/main.83bbdc06.js.map",
-    "992.76194bf0.chunk.css.map": "/Slim-mom-individual-project/static/css/992.76194bf0.chunk.css.map",
-    "992.bbb33f04.chunk.js.map": "/Slim-mom-individual-project/static/js/992.bbb33f04.chunk.js.map",
+    "main.19d003b4.css.map": "/Slim-mom-individual-project/static/css/main.19d003b4.css.map",
+    "main.ae36b453.js.map": "/Slim-mom-individual-project/static/js/main.ae36b453.js.map",
+    "992.37651a13.chunk.css.map": "/Slim-mom-individual-project/static/css/992.37651a13.chunk.css.map",
+    "992.a1a2d801.chunk.js.map": "/Slim-mom-individual-project/static/js/992.a1a2d801.chunk.js.map",
     "534.a179d229.chunk.js.map": "/Slim-mom-individual-project/static/js/534.a179d229.chunk.js.map",
     "591.de7ecd51.chunk.css.map": "/Slim-mom-individual-project/static/css/591.de7ecd51.chunk.css.map",
     "591.25fc68dc.chunk.js.map": "/Slim-mom-individual-project/static/js/591.25fc68dc.chunk.js.map",
     "586.7054de27.chunk.js.map": "/Slim-mom-individual-project/static/js/586.7054de27.chunk.js.map",
     "584.de7ecd51.chunk.css.map": "/Slim-mom-individual-project/static/css/584.de7ecd51.chunk.css.map",
-    "584.71302e94.chunk.js.map": "/Slim-mom-individual-project/static/js/584.71302e94.chunk.js.map",
+    "584.9b2f1739.chunk.js.map": "/Slim-mom-individual-project/static/js/584.9b2f1739.chunk.js.map",
     "123.32bd2dc2.chunk.js.map": "/Slim-mom-individual-project/static/js/123.32bd2dc2.chunk.js.map",
     "726.df9aa86e.chunk.js.map": "/Slim-mom-individual-project/static/js/726.df9aa86e.chunk.js.map",
     "962.bb79829f.chunk.js.map": "/Slim-mom-individual-project/static/js/962.bb79829f.chunk.js.map",
     "636.1e07bb84.chunk.js.map": "/Slim-mom-individual-project/static/js/636.1e07bb84.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.363cb4d0.css",
-    "static/js/main.83bbdc06.js"
+    "static/css/main.19d003b4.css",
+    "static/js/main.ae36b453.js"
   ]
 }
