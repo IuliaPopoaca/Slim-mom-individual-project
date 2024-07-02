@@ -15,12 +15,17 @@ const ModalAddProduct = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('keydown', handleCloseModal);
-
-    return () => {
-      window.removeEventListener('keydown', handleCloseModal);
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
     };
-  });
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,11 +42,8 @@ const ModalAddProduct = () => {
     dispatch(setProductModalOpened(false));
   };
 
-  const handleCloseModal = e => {
-    if (
-      (e.type === 'click' && e.target === e.currentTarget) ||
-      (e.type === 'keydown' && e.key === 'Escape')
-    ) {
+  const handleCloseModal = (e) => {
+    if (e.type === 'click' && e.target === e.currentTarget) {
       closeModal();
     }
   };
@@ -53,7 +55,7 @@ const ModalAddProduct = () => {
     >
       <div className="modal">
         <div className="inner">
-          <button type="buttn" className="close" onClick={closeModal}>
+          <button type="button" className="close" onClick={closeModal}>
             <BackArrow className="return__icon" />
           </button>
           <div>

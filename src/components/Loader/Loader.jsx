@@ -1,30 +1,21 @@
-import {
-  LoaderContainer,
-  LoaderSmallStyled,
-  LoaderStyled,
-  StrawberryImg,
-  StyledTriangle,
-} from './Loader.styled';
-import Strawberry from '../../images/strawberry.png';
+import React from 'react';
+import { Flex } from '@chakra-ui/react';
+import { Spinner } from '@chakra-ui/react';
 
-export const Loader = () => {
+export default function Loader({
+  height = '100px',
+  width = '100px',
+  ...otherProps
+}) {
   return (
-    <LoaderStyled>
-      <LoaderContainer>
-        <StyledTriangle
-          height="100"
-          width="100"
-          color="#4fa94d"
-          ariaLabel="triangle-loading"
-          visible={true}
-        />
-
-        <StrawberryImg src={Strawberry} alt="Strawberry" />
-      </LoaderContainer>
-    </LoaderStyled>
+    <Flex justifyContent="center" marginTop="80px">
+      <Spinner
+        height={height}
+        width={width}
+        color="#FC842D"
+        aria-label="loading"
+        {...otherProps}
+      />
+    </Flex>
   );
-};
-
-export const LoaderSmall = ({ name }) => {
-  return <LoaderSmallStyled className={name} />;
-};
+}

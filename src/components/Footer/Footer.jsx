@@ -1,5 +1,4 @@
 import { FooterStyled, Team } from './Footer.styled';
-import { GiBee } from 'react-icons/gi';
 import beeCodeTeam from 'images/Team/BeeCodeTeam.png';
 import { useEffect, useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
@@ -35,21 +34,21 @@ const Footer = () => {
   return (
     <FooterStyled>
       <ul>
-        <li>© 2023</li>
+        <li>© 2024</li>
         <li>
           <p>
             Made by{' '}
             <span className="teamname" onClick={toggleTeam}>
-              BeeCode
+             Iulia Popoaca
             </span>
           </p>
-          <GiBee className="icon" />
+
         </li>
       </ul>
 
       <Team onClick={closeModal} className={teamOpened ? 'opened' : ''}>
         <div className="wrapper">
-          <img src={beeCodeTeam} alt="Bee Code Tem" />
+          <img src={beeCodeTeam} alt="Iulia Popoaca" />
           <IoMdClose />
         </div>
       </Team>

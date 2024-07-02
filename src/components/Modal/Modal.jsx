@@ -1,71 +1,158 @@
-import { ModalStyled } from './Modal.styled';
-import { IoMdClose } from 'react-icons/io';
-import { ReactComponent as BackArrow } from 'images/backarrow.svg';
-import { createPortal } from 'react-dom';
-import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectModalOpened } from '../../redux/selectors';
-import { setModalOpened } from '../../redux/modalOpenedSlice';
+import {
+  Box,
+  Divider,
+  Link,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  Text,
+} from '@chakra-ui/react';
 
-const modalRoot = document.querySelector('#modal-root');
+import MainButton from 'components/Button/MainButton';
+import LogoSmall from 'components/Logo/SmallLogo';
 
-const Modal = ({ children }) => {
+import {
+  getDailyRate,
+  getIsLoading,
+  getNotAllowedProducts,
+} from '../../redux/dailyRate/dailyRateSelectors';
+
+import { BottomGradient, List, TopGradient } from './Modal.styled';
+import { useNavigate } from 'react-router-dom/dist';
+import GrayBar from 'components/GrayBar/GrayBar';
+import Loader from 'components/Loader/Loader';
+
+const ModalWindow = ({ overlay, isOpen, onClose }) => {
+  const dailyRate = useSelector(getDailyRate);
+  const isLoading = useSelector(getIsLoading);
+  const notAllowedProducts = useSelector(getNotAllowedProducts);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const modalOpened = useSelector(selectModalOpened);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 767);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('keydown', handleCloseModal);
-
-    return () => {
-      window.removeEventListener('keydown', handleCloseModal);
-    };
-  });
-
-  const closeModal = () => {
-    dispatch(setModalOpened(false));
+  const handleClick = () => {
+    navigate('/registration');
+    dispatch(getDailyRate(null));
   };
+  return (
+    <>
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        isCentered={true}
+        size={{ xs: 'full', md: '2xl' }}
+      >
+        {overlay}
+        <ModalContent>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            p="20px"
+          >
+            <LogoSmall />
+            <Box display={{ md: 'none' }}>
+              <Link
+                _hover={{ textDecor: 'none' }}
+                fontFamily="-moz-initial"
+                fontSize="14px"
+                as={NavLink}
+                to="/login"
+                mr="16px"
+              >
+                SIGIN IN
+              </Link>
+              <Link
+                _hover={{ textDecor: 'none' }}
+                fontFamily="-moz-initial"
+                fontSize="14px"
+                as={NavLink}
+                to="/registration"
+              >
+                REGISTRATION
+              </Link>
+            </Box>
+          </Box>
+          {isOpen && <GrayBar onClick={onClose} />}
+          <Box maxW="409px" mx="auto">
+            <ModalHeader fontSize="26px" textAlign="center">
+              Your recommended daily calorie intake is
+            </ModalHeader>
+          </Box>
+          <ModalCloseButton size="sm" display={{ xs: 'none', md: 'block' }} />
+          <ModalBody h="100%">
+            <Box minH="279px">
+              {isLoading ? (
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  minH="279px"
+                  w="100%"
+                >
+                  <Loader height={20} width={20} />
+                </Box>
+              ) : (
+                <>
+                  <Box display="flex" justifyContent="center">
+                    <Text
+                      as="b"
+                      fontSize="48px"
+                      display="flex"
+                      alignItems="baseline"
+                      justifyContent="center"
+                      color="#264061"
+                    >
+                      {dailyRate}
+                      <Text fontSize="24px" ml="1">
+                        kcal
+                      </Text>
+                    </Text>
+                  </Box>
 
-  const handleCloseModal = e => {
-    if (
-      (e.type === 'click' && e.target === e.currentTarget) ||
-      (e.type === 'keydown' && e.key === 'Escape')
-    ) {
-      closeModal();
-    }
-  };
-
-  return createPortal(
-    <ModalStyled
-      onClick={handleCloseModal}
-      className={!modalOpened ? 'is-hidden' : ''}
-    >
-      <div className="modal">
-        <div className="inner">
-          <button type="buttn" className="close" onClick={closeModal}>
-            {isSmallScreen ? (
-              <BackArrow className="return__icon" />
-            ) : (
-              <IoMdClose className="close__icon" />
-            )}
-          </button>
-          <div className="text">{children}</div>
-        </div>
-      </div>
-    </ModalStyled>,
-    modalRoot
+                  <Divider w={{ xs: 'none', md: '330px' }} mx="auto" />
+                  <Box
+                    position="relative"
+                    w={{ xs: 'none', md: '330px' }}
+                    mx="auto"
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="start"
+                  >
+                    <Text
+                      as={'h3'}
+                      color="#212121"
+                      textAlign="center"
+                      w="100%"
+                      mt="12px"
+                      mb="20px"
+                    >
+                      Foods you should not eat
+                    </Text>
+                    <TopGradient />
+                    <List>
+                      {notAllowedProducts.map((item, index) => (
+                        <li key={index}>
+                          {index + 1}. {item}
+                        </li>
+                      ))}
+                    </List>
+                    <BottomGradient />
+                  </Box>
+                </>
+              )}
+            </Box>
+          </ModalBody>
+          <ModalFooter display="flex" justifyContent="center" mb="81px">
+            <MainButton text="Start losing weight" onClick={handleClick} />
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
   );
 };
 
-export default Modal;
+export default ModalWindow;

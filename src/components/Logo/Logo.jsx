@@ -1,33 +1,15 @@
-import { ReactComponent as LogoIcon } from 'images/logo.svg';
-import { ReactComponent as MobileLogo } from 'images/mobileLogo.svg';
-import { mediaSizes } from 'constants/media';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { LinkStyled } from './Logo.styled';
+import { NavLink } from 'react-router-dom';
+import { Flex, Link } from '@chakra-ui/react';
+import textLogo from '../../assets/logo/textLogo.svg';
 
-export const Logo = () => {
-  const [mobileDevice, setMobileDevice] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= parseInt(mediaSizes.mobile)) {
-        setMobileDevice(true);
-      } else {
-        setMobileDevice(false);
-      }
-    };
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
+const Logo = () => {
   return (
-    <LinkStyled to="/">
-      {!mobileDevice ? <LogoIcon /> : <MobileLogo />}
-    </LinkStyled>
+    <Flex gap="20px" alignItems="center">
+      <Link as={NavLink} to="/">
+        <img src={textLogo} alt="Logo" width="166px" height="66px" />
+      </Link>
+    </Flex>
   );
 };
+
+export default Logo;

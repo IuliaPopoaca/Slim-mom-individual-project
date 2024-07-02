@@ -1,33 +1,22 @@
 import { configureStore } from '@reduxjs/toolkit';
-import storage from 'redux-persist/lib/storage';
-import { ModalOpenedReducer } from './modalOpenedSlice';
+import { persistStore } from 'redux-persist';
 import {
-  persistStore,
-  persistReducer,
   FLUSH,
-  REHYDRATE,
   PAUSE,
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist';
-import { loadingReducer } from './loader/slice';
-import { addProductModalReducer } from './ModalAddProductOpened/slice';
-import { userReducer } from './user/slice';
-
-const authPersistConfig = {
-  key: 'auth',
-  storage,
-  whitelist: ['token'],
-};
+  REHYDRATE,
+} from 'redux-persist/es/constants';
+import { persistedAuthReducer } from './auth/authSlice';
+import { persistedDailyRateReducer } from './dailyRate/dailyRateSlice';
+import { productsReducer } from './products/productsSlice';
 
 export const store = configureStore({
   reducer: {
-    auth: persistReducer(authPersistConfig, userReducer),
-    user: userReducer,
-    modalopened: ModalOpenedReducer,
-    loading: loadingReducer,
-    addproductmodalopened: addProductModalReducer,
+    auth: persistedAuthReducer,
+    dailyRate: persistedDailyRateReducer,
+    products: productsReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

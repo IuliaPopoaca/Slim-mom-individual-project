@@ -1,20 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from 'components/App/App';
-import './sass/index.scss';
-import { BrowserRouter } from 'react-router-dom';
-import { persistor, store } from './redux/store';
-import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react';
+import './index.css';
+import { App } from 'components/App';
+import { customTheme } from './theme/theme';
+import { persistor, store } from './redux/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter basename="/Slim-mom-individual-project">
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/Slim-mom-individual-project">
+        <ChakraProvider theme={customTheme}>
           <App />
-        </BrowserRouter>
+        </ChakraProvider>
       </PersistGate>
     </Provider>
-  </React.StrictMode>
+  </BrowserRouter>
+  // </React.StrictMode>
 );

@@ -1,100 +1,124 @@
-import {
-  HeaderStyled,
-  MenuButton,
-  Icon,
-  HeaderContainer,
-} from './Header.styled';
-import { RiMenuFill, RiCloseLine } from 'react-icons/ri';
-import Navigation from 'components/Navigation/Navigation';
-import UserInfo from 'components/UserInfo/UserInfo';
-import MobileMenu from 'components/MobileMenu/MobileMenu';
 import { useSelector } from 'react-redux';
-import { useState, useEffect, useCallback } from 'react';
-import { mediaSizes } from 'constants/media';
-import { selectIsLoggedIn } from '../../redux/user/selectors';
-import { Logo } from 'components/Logo/Logo';
+import { NavLink } from 'react-router-dom';
 
-const Header = () => {
-  const [showBurgerIcon, setShowBurgerIcon] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isUserInfoShown, setUserInfoShown] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const isLoggedIn = useSelector(selectIsLoggedIn);
-  const [isDesktop, setIsDesktop] = useState(false);
+import { Box, Flex, Link } from '@chakra-ui/react';
 
-  const clickHandler = useCallback(() => {
-    if (!isLoggedIn) return;
-    setIsMobileMenuOpen(state => !state);
-  }, [isLoggedIn]);
+import { authSelectors } from '../../redux/auth/authSelectors';
+import SmallLogo from 'components/Logo/SmallLogo';
+import UserMenu from 'components/UserMenu/UserMenu';
+import Logo from 'components/Logo/Logo';
+import HamburgerMenu from 'components/HamburgerMenu/HamburgerMenu';
+import GrayBar from 'components/GrayBar/GrayBar';
+import DesktopLogo from 'components/Logo/BigLogo';
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const height = isDesktop ? 100 : 40;
-      const isTop = window.scrollY <= height;
-      setIsScrolled(!isTop);
-    };
+const Header = ({ onClick }) => {
+  const isLogin = useSelector(authSelectors.isLoggedIn);
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isDesktop]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= parseInt(mediaSizes.desktop) && isLoggedIn) {
-        setShowBurgerIcon(true);
-      } else {
-        setShowBurgerIcon(false);
-      }
-      if (window.innerWidth > parseInt(mediaSizes.mobile)) {
-        setUserInfoShown(true);
-      } else {
-        setUserInfoShown(false);
-      }
-    };
-    handleResize();
-
-    setIsDesktop(window.innerWidth >= parseInt(mediaSizes.desktop));
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [isLoggedIn]);
+  const getStyle = ({ isActive }) =>
+    isActive ? { color: '#212121' } : { color: '#9B9FAA' };
 
   return (
     <>
-      <HeaderStyled
-        className={`${isScrolled ? 'bg' : ''} ${!isLoggedIn ? 'guest' : ''}`}
+      <Flex
+        position="absolute"
+        top={{ lg: '80px', xs: '20px' }}
+        left="0"
+        w="100%"
+        pb={{ xs: '16px', lg: '0px' }}
+        px={{ xs: '16px', md: '32px', lg: '16px' }}
+        zIndex="100"
+        justifyContent="space-between"
+        borderBottom={{
+          base: '2px solid #E0E0E0',
+          lg: 'none',
+        }}
       >
-        <HeaderContainer>
-          <Logo />
-          {!showBurgerIcon && <Navigation />}
-          {isLoggedIn && isUserInfoShown && <UserInfo />}
-          {showBurgerIcon && (
-            <MenuButton
-              style={{ marginLeft: isUserInfoShown ? '51px' : 'auto' }}
-              onClick={clickHandler}
-            >
-              {isMobileMenuOpen ? (
-                <Icon>
-                  <RiCloseLine />
-                </Icon>
-              ) : (
-                <RiMenuFill width="18" height="12" />
-              )}
-            </MenuButton>
-          )}
-        </HeaderContainer>
-        {!isUserInfoShown && <UserInfo />}
-      </HeaderStyled>
+        {!isLogin ? (
+          <Flex
+            alignItems={{ xs: 'center', lg: 'end' }}
+            gap="20px"
+            w="100%"
+            justifyContent={{ xs: 'space-between', lg: 'flex-start' }}
+          >
+            <Box>
+              <DesktopLogo />
+              <Flex display={{ xs: 'none', md: 'flex', lg: 'none' }}>
+                <Logo />
+              </Flex>
+              <Flex display={{ xs: 'flex', md: 'none' }}>
+                <SmallLogo />
+              </Flex>
+            </Box>
+            <Flex gap="20px">
+              <Link
+                _hover={{ textDecor: 'none' }}
+                fontSize="14px"
+                as={NavLink}
+                to="/login"
+                style={getStyle}
+                fontFamily="secondary"
+                fontWeight="700"
+              >
+                SIGN IN
+              </Link>
+              <Link
+                _hover={{ textDecor: 'none' }}
+                fontSize="14px"
+                as={NavLink}
+                to="/registration"
+                style={getStyle}
+                fontFamily="secondary"
+                fontWeight="700"
+              >
+                REGISTRATION
+              </Link>
+            </Flex>
+          </Flex>
+        ) : (
+          <Flex justifyContent="space-between" w="100%">
+            <Flex alignItems={{ xs: 'center', lg: 'end' }} gap="20px">
+              <DesktopLogo />
+              <Box display={{ lg: 'none' }}>
+                <Logo />
+              </Box>
+              <Flex display={{ xs: 'none', lg: 'flex' }} gap="16px">
+                <Link
+                  _hover={{ textDecor: 'none' }}
+                  fontSize="14px"
+                  as={NavLink}
+                  to="/calculator"
+                  style={getStyle}
+                  fontFamily="secondary"
+                  fontWeight="700"
+                >
+                  CALCULATOR
+                </Link>
+                <Link
+                  _hover={{ textDecor: 'none' }}
+                  fontSize="14px"
+                  as={NavLink}
+                  to="/diary"
+                  style={getStyle}
+                  fontFamily="secondary"
+                  fontWeight="700"
+                >
+                  DIARY
+                </Link>
+              </Flex>
+            </Flex>
 
-      {isMobileMenuOpen && showBurgerIcon && (
-        <MobileMenu handleClick={clickHandler} />
-      )}
+            <Flex display="flex" alignItems={{ xs: 'center', lg: 'end' }}>
+              <Box display={{ xs: 'none', md: 'flex' }} mr="53px">
+                <UserMenu />
+              </Box>
+              <HamburgerMenu />
+            </Flex>
+          </Flex>
+        )}
+        <Box position="absolute" bottom="-42px" left="0" w="100%">
+          {isLogin && <GrayBar onClick={onClick} />}
+        </Box>
+      </Flex>
     </>
   );
 };

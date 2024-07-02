@@ -1,124 +1,48 @@
 import styled from '@emotion/styled';
-import { animation } from 'constants/animation';
-import { mediaSizes } from 'constants/media';
-import { ishidden, transition } from 'helpers';
 
-const headerHeight = '80px';
-
-export const ModalStyled = styled.div`
-  position: fixed;
-  z-index: 3;
-  top: ${headerHeight};
-  left: 0;
+export const List = styled.ul`
   width: 100%;
-  height: calc(100% - ${headerHeight});
-  opacity: 1;
-  ${transition('visible')};
+  height: 150px;
 
-  @media screen and (min-width: ${mediaSizes.tablet}) {
-    height: 100%;
-    z-index: 5;
-    top: 0;
-    background-color: rgba(33, 33, 33, 0.12);
+  color: #9b9faa;
+  overflow: hidden;
+  overflow-y: scroll;
+  &&::-webkit-scrollbar {
+    width: 6px;
   }
 
-  &.is-hidden {
-    ${ishidden};
-
-    & .inner {
-      transform: scale(0.7);
-      ${transition('transform')};
-      -webkit-animation: bounce_out 3000ms linear both;
-      animation: bounce_out 3000ms linear both;
-    }
+  &&::-webkit-scrollbar-track {
+    background: #f0f1f3;
   }
 
-  & .modal {
-    position: fixed;
-    top: ${headerHeight};
-    left: 50%;
-    width: 100%;
-    height: calc(100% - ${headerHeight});
-    transform: translateX(-50%) translateY(0px);
-
-    @media screen and (min-width: ${mediaSizes.tablet}) {
-      top: 50%;
-      width: 672px;
-      height: auto;
-      max-width: calc(100% - 24px * 2);
-      transform: translateX(-50%) translateY(-50%);
-    }
+  &&::-webkit-scrollbar-thumb {
+    background: #264061;
   }
 
-  & .inner {
-    height: 100%;
-    transform: scale(1);
-    ${transition('transform')};
-    overflow: hidden;
-    padding: 80px 40px;
-    background-color: #ffffff;
-    overflow: hidden;
-    position: relative;
-    border-radius: 20px;
-    -webkit-animation: bounce_in 1500ms ease-in-out both;
-    animation: bounce_in 1500ms ease-in-out both;
-
-    @media screen and (min-width: ${mediaSizes.tablet}) {
-      box-shadow: 0px 22px 40px rgba(0, 0, 0, 0.1);
-      padding: 64px 82px 82px 82px;
-    }
+  &&::-webkit-scrollbar-thumb:hover {
+    background: #101a28;
   }
+`;
 
-  & .close {
-    background-color: #eff1f3;
-    width: 100%;
-    height: 40px;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
+export const BottomGradient = styled.div`
+  position: absolute;
+  bottom: 0;
 
-    position: absolute;
-    top: 0;
-    right: 0;
+  width: 100%;
+  height: 20px;
 
-    @media screen and (min-width: ${mediaSizes.tablet}) {
-      background-color: transparent;
-      border: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    #ffffff 100%
+  );
+`;
+export const TopGradient = styled.div`
+  position: absolute;
+  top: 56px;
 
-      width: 20px;
-      height: 20px;
-      right: 24px;
-      top: 24px;
-      ${transition('transform')}
+  width: 100%;
+  height: 15px;
 
-      &:hover {
-        transform: scale(1.2);
-      }
-
-      &__icon {
-        fill: #000000;
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
-
-  & .return__icon {
-    margin-left: 20px;
-    width: 12px;
-    height: 7px;
-    cursor: pointer;
-    ${transition('transform')}
-
-    &:hover {
-      transform: scale(1.2);
-    }
-
-    @media screen and (min-width: ${mediaSizes.tablet}) {
-      position: absolute;
-    }
-  }
-  ${animation}
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0%, #ffffff 100%);
 `;
