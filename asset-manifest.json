@@ -1,21 +1,22 @@
 {
   "files": {
     "main.css": "/Slim-mom-individual-project/static/css/main.19d003b4.css",
-    "main.js": "/Slim-mom-individual-project/static/js/main.0b8e1a33.js",
+    "main.js": "/Slim-mom-individual-project/static/js/main.6ea38dd7.js",
     "static/css/992.37651a13.chunk.css": "/Slim-mom-individual-project/static/css/992.37651a13.chunk.css",
     "static/js/992.a1a2d801.chunk.js": "/Slim-mom-individual-project/static/js/992.a1a2d801.chunk.js",
     "static/js/534.a179d229.chunk.js": "/Slim-mom-individual-project/static/js/534.a179d229.chunk.js",
     "static/css/591.de7ecd51.chunk.css": "/Slim-mom-individual-project/static/css/591.de7ecd51.chunk.css",
-    "static/js/591.25fc68dc.chunk.js": "/Slim-mom-individual-project/static/js/591.25fc68dc.chunk.js",
+    "static/js/591.11d17aa7.chunk.js": "/Slim-mom-individual-project/static/js/591.11d17aa7.chunk.js",
     "static/js/586.7054de27.chunk.js": "/Slim-mom-individual-project/static/js/586.7054de27.chunk.js",
     "static/css/584.de7ecd51.chunk.css": "/Slim-mom-individual-project/static/css/584.de7ecd51.chunk.css",
-    "static/js/584.ab69eb9b.chunk.js": "/Slim-mom-individual-project/static/js/584.ab69eb9b.chunk.js",
+    "static/js/584.cf815b3b.chunk.js": "/Slim-mom-individual-project/static/js/584.cf815b3b.chunk.js",
     "static/js/123.32bd2dc2.chunk.js": "/Slim-mom-individual-project/static/js/123.32bd2dc2.chunk.js",
     "static/js/726.df9aa86e.chunk.js": "/Slim-mom-individual-project/static/js/726.df9aa86e.chunk.js",
     "static/js/962.bb79829f.chunk.js": "/Slim-mom-individual-project/static/js/962.bb79829f.chunk.js",
     "static/js/636.fb5f234e.chunk.js": "/Slim-mom-individual-project/static/js/636.fb5f234e.chunk.js",
     "static/media/watermelon.png": "/Slim-mom-individual-project/static/media/watermelon.8221caf29c22ad7a13ad.png",
     "static/media/desktopMainBg.png": "/Slim-mom-individual-project/static/media/desktopMainBg.7d6024134020ef14c78a.png",
+    "static/media/BeeCodeTeam.png": "/Slim-mom-individual-project/static/media/BeeCodeTeam.f28b18aecd29982db7d1.png",
     "static/media/tabletMainBg.png": "/Slim-mom-individual-project/static/media/tabletMainBg.6d52e5c9ba4340bdc1b0.png",
     "static/media/leafMd.svg": "/Slim-mom-individual-project/static/media/leafMd.837eccf493af18accc7340946f9929c9.svg",
     "static/media/leafLg.svg": "/Slim-mom-individual-project/static/media/leafLg.d0f6885ca1718a1057b3970635344059.svg",
@@ -45,15 +46,15 @@
     "static/media/montserrat-vietnamese-400-normal.woff2": "/Slim-mom-individual-project/static/media/montserrat-vietnamese-400-normal.176348415471f3e062e6.woff2",
     "index.html": "/Slim-mom-individual-project/index.html",
     "main.19d003b4.css.map": "/Slim-mom-individual-project/static/css/main.19d003b4.css.map",
-    "main.0b8e1a33.js.map": "/Slim-mom-individual-project/static/js/main.0b8e1a33.js.map",
+    "main.6ea38dd7.js.map": "/Slim-mom-individual-project/static/js/main.6ea38dd7.js.map",
     "992.37651a13.chunk.css.map": "/Slim-mom-individual-project/static/css/992.37651a13.chunk.css.map",
     "992.a1a2d801.chunk.js.map": "/Slim-mom-individual-project/static/js/992.a1a2d801.chunk.js.map",
     "534.a179d229.chunk.js.map": "/Slim-mom-individual-project/static/js/534.a179d229.chunk.js.map",
     "591.de7ecd51.chunk.css.map": "/Slim-mom-individual-project/static/css/591.de7ecd51.chunk.css.map",
-    "591.25fc68dc.chunk.js.map": "/Slim-mom-individual-project/static/js/591.25fc68dc.chunk.js.map",
+    "591.11d17aa7.chunk.js.map": "/Slim-mom-individual-project/static/js/591.11d17aa7.chunk.js.map",
     "586.7054de27.chunk.js.map": "/Slim-mom-individual-project/static/js/586.7054de27.chunk.js.map",
     "584.de7ecd51.chunk.css.map": "/Slim-mom-individual-project/static/css/584.de7ecd51.chunk.css.map",
-    "584.ab69eb9b.chunk.js.map": "/Slim-mom-individual-project/static/js/584.ab69eb9b.chunk.js.map",
+    "584.cf815b3b.chunk.js.map": "/Slim-mom-individual-project/static/js/584.cf815b3b.chunk.js.map",
     "123.32bd2dc2.chunk.js.map": "/Slim-mom-individual-project/static/js/123.32bd2dc2.chunk.js.map",
     "726.df9aa86e.chunk.js.map": "/Slim-mom-individual-project/static/js/726.df9aa86e.chunk.js.map",
     "962.bb79829f.chunk.js.map": "/Slim-mom-individual-project/static/js/962.bb79829f.chunk.js.map",
@@ -61,6 +62,6 @@
   },
   "entrypoints": [
     "static/css/main.19d003b4.css",
-    "static/js/main.0b8e1a33.js"
+    "static/js/main.6ea38dd7.js"
   ]
 }
