@@ -133,7 +133,7 @@ const ModalWindow = ({ overlay, isOpen, onClose }) => {
                       Foods you should not eat
                     </Text>
                     <TopGradient />
-                    <List>
+                    <List display='none'>
                       {notAllowedProducts.map((item, index) => (
                         <li key={index}>
                           {index + 1}. {item}

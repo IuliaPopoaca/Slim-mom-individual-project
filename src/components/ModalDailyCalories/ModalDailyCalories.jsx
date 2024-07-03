@@ -34,7 +34,7 @@ export const ModalDailyCalories = () => {
         {notAllowedProducts.length > 0 && (
           <div className="recomendation">
             <p className="recomendation__title">Foods you should not eat</p>
-            <ul className="recomendation__list">
+            <ul className="recomendation__list" >
               {notAllowedProducts.map(pr => (
                 <li className="recomendation__item" key={nanoid()}>
                   {pr}

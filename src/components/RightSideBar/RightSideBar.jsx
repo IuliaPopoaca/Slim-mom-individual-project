@@ -83,6 +83,7 @@ const RightSideBar = () => {
       </Box>
       <Box w={{ xs: '100%', md: '288px' }}>
         <Heading
+        display='none'
           as="h3"
           fontSize="14px"
           textAlign="center"
@@ -93,7 +94,7 @@ const RightSideBar = () => {
           Food not recommended
         </Heading>
 
-        <Box position="relative">
+        <Box position="relative" display='none'>
           {notAllowedProducts.length === 0 ? (
             <Text w="100%" textAlign="center" color="#9B9FAA">
               Your diet will be displayed here
