@@ -69,6 +69,7 @@ export const FormikForm = styled(Form)`
 `;
 
 export const ProductsList = styled.ul`
+display:none;
   list-style: none;
   padding: 15px;
   max-height: 300px;
@@ -95,16 +96,19 @@ export const ProductsList = styled.ul`
   }
 
   @media screen and (min-width: ${mediaSizes.tablet}) {
+  display:none;
     max-height: 400px;
     width: 400px;
   }
 
   @media screen and (min-width: ${mediaSizes.desktop}) {
+  display:none;
     max-height: 350px;
     width: 440px;
   }
 
   & li {
+  display:none;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.4;

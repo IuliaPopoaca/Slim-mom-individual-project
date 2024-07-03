@@ -1,12 +1,7 @@
 import styled from '@emotion/styled';
 
 export const List = styled.ul`
-  width: calc(100% + 16px);
-  max-height: 300px;
-
-  color: #9b9faa;
-  overflow: hidden;
-  overflow-y: auto;
+display:none;
   &&::-webkit-scrollbar {
     position: fixed;
     top: 200px;

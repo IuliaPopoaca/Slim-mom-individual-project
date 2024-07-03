@@ -141,13 +141,13 @@ export const DiaryForm = ({ type }) => {
         )}
 
         {showDropdown && isFetchingProducts && (
-          <ProductsList className="productlist">
+          <ProductsList className="productlist" >
             <LoaderSmall />
           </ProductsList>
         )}
 
         {showDropdown && !isFetchingProducts && filteredProducts.length > 1 && (
-          <ProductsList className="productlist">
+          <ProductsList className="productlist" >
             {filteredProducts.map(product => (
               <li
                 onClick={() => {

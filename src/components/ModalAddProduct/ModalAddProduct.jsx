@@ -1,7 +1,7 @@
 import { ModalStyled } from './ModalAddProduct.styled';
 import { ReactComponent as BackArrow } from 'images/backarrow.svg';
 import { createPortal } from 'react-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAddProductModalOpened } from '../../redux/ModalAddProductOpened/selectors';
 import { setProductModalOpened } from '../../redux/ModalAddProductOpened/slice';
@@ -14,6 +14,10 @@ const ModalAddProduct = () => {
   const modalOpened = useSelector(selectAddProductModalOpened);
   const [isMobile, setIsMobile] = useState(false);
 
+  const closeModal = useCallback(() => {
+    dispatch(setProductModalOpened(false));
+  }, [dispatch]);
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
@@ -25,7 +29,7 @@ const ModalAddProduct = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [closeModal]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,10 +41,6 @@ const ModalAddProduct = () => {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  const closeModal = () => {
-    dispatch(setProductModalOpened(false));
-  };
 
   const handleCloseModal = (e) => {
     if (e.type === 'click' && e.target === e.currentTarget) {

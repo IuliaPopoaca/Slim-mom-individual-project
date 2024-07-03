@@ -74,7 +74,7 @@ export const DiaryMain = () => {
 
         {eatenProductsSorted.length > 0 ? (
           <div className="Diarty__header-wrapper">
-            <DiaryStyledList>
+            <DiaryStyledList >
               {eatenProductsSorted.map(product => (
                 <li key={product.id} className="Diary__list-wrapper">
                   <div className="Diarty__list">

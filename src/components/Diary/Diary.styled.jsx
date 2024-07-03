@@ -68,13 +68,13 @@ export const DiaryStyled = styled.div`
     }
   }
   & .Diary__list-name {
+  display:none;
     font-size: 14px;
     line-height: 17px;
     letter-spacing: 0.04em;
     font-weight: 400;
     flex-basis: 100%;
     margin-right: 8px;
-
     color: #212121;
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 8px;
@@ -170,13 +170,13 @@ export const DiaryStyled = styled.div`
   }
 
   & .Diarty__list {
-    display: flex;
+    display: none;
     position: relative;
     /* gap: 10px; */
   }
 
   & .Diary__list-wrapper {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 20px;
     @media screen and (min-width: ${mediaSizes.tablet}) {
@@ -298,7 +298,7 @@ export const DiaryStyled = styled.div`
 `;
 
 export const DiaryStyledList = styled.ul`
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 16px;
   max-height: 280px;

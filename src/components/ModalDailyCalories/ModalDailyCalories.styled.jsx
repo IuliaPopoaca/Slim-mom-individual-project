@@ -72,7 +72,7 @@ export const ModalDailyCaloriesStyled = styled.div`
     }
 
     &__list {
-      display: flex;
+      display: none;
       flex-direction: column;
       gap: 10px;
 

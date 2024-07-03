@@ -42,7 +42,8 @@ export default function DiaryProductsList() {
       w={{ xs: '100%', md: '610px', lg: '623px' }}
       position="relative"
     >
-      <List>
+      <List display='none'>
+
         {productsList &&
           productsList.length > 0 &&
           productsList.map(product => {
