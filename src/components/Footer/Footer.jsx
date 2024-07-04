@@ -48,8 +48,9 @@ const Footer = () => {
 
       <Team onClick={closeModal} className={teamOpened ? 'opened' : ''}>
         <div className="wrapper">
-          <img src={beeCodeTeam} alt="Iulia Popoaca" />
+
           <IoMdClose />
+          <a href="https://github.com/IuliaPopoaca" ><img src={beeCodeTeam} alt="Iulia Popoaca" href="https://github.com/IuliaPopoaca" /></a>
         </div>
       </Team>
     </FooterStyled>

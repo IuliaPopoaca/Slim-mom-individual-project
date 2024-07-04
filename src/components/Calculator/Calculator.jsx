@@ -152,10 +152,11 @@ export const CalculatorEl = () => {
           onSubmit={handleSubmit}
         >
           <Form autoComplete="off" onChange={handleOnChange}>
-            <FormWrapper>
+            <FormWrapper >
               <InputsWrapper>
                 <InputWraper>
                   <Field
+
                     type="text"
                     name="height"
                     placeholder=" "

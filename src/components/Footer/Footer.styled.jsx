@@ -60,12 +60,14 @@ export const FooterStyled = styled.footer`
 `;
 
 export const Team = styled.div`
+ z-index:10000;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
+
 
   & .wrapper {
     position: absolute;
@@ -78,6 +80,13 @@ export const Team = styled.div`
     opacity: 0;
     border-radius: 40px;
     ${transition('opacity')}
+  }
+
+  & .github{
+    display: flex;
+    max-width: 100%;
+    width: 500px;
+    color:white;
   }
 
   &.opened {
@@ -94,7 +103,7 @@ export const Team = styled.div`
   & img {
     display: inline;
     max-width: 100%;
-    width: 500px;
+    width: 300px;
   }
   & svg {
     position: absolute;

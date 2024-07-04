@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Form = styled.form`
+ z-index:0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,6 +47,7 @@ export const Title = styled.h1`
 `;
 
 export const NameLabel = styled.p`
+
   margin-top: 5px;
   margin-bottom: 8px;
   font-family: 'Verdana';

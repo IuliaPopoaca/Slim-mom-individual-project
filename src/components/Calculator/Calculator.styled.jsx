@@ -67,6 +67,7 @@ export const CalculatorStyled = styled.div`
 // `;
 
 export const FormWrapper = styled.div`
+
   margin-bottom: 32px;
   display: flex;
   flex-direction: column;

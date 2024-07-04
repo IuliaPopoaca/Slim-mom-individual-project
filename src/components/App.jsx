@@ -4,7 +4,7 @@ import { Container } from '@chakra-ui/react';
 import { Outlet, Route, Routes } from 'react-router-dom';
 
 import authOperations from '../redux/auth/authOperations';
-
+import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import Loader from './Loader/Loader';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
@@ -37,7 +37,6 @@ export const App = () => {
       px={{ xs: '16px', md: '32px', lg: '16px' }}
     >
       <Header />
-      {/* <Loader /> */}
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Outlet />}>
@@ -85,6 +84,9 @@ export const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
+      <Footer /> {/* Adaugă componenta Footer aici */}
     </Container>
   );
 };
+
+export default App;
